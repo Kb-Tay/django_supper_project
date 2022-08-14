@@ -1,0 +1,26 @@
+{% extends "base/index.html" %}
+{% block content %}
+        <div class= "container mt-2">
+            <table>
+                <caption>
+                  Collated orders as of (Date)
+                </caption>
+                <thead>
+                  <tr>
+                    <th style="width:30%">Username</th>
+                    <th style="width:30%">Place</th>
+                    <th style="width:50%">Order</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for order in orders %} 
+                  <tr>
+                    <td>{{ order.author }}</td>
+                    <td>{{ order.supper_places }}</td>
+                    <td>{{ order.food }}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+        </div>
+{% endblock content %}
